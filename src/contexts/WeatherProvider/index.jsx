@@ -2,8 +2,7 @@ import { useState } from 'react'
 import P from 'prop-types'
 import { WeatherContext } from './context'
 
-export const WeatherInfoProvider = ({children}) =>{
-
+export const WeatherInfoProvider = ({ children }) => {
   const [weatherInfo, setWeatherInfo] = useState({
     isLoading: false,
     isSuccess: false,
@@ -11,13 +10,13 @@ export const WeatherInfoProvider = ({children}) =>{
     info: undefined
   })
 
-  return(
-    <WeatherContext.Provider value={{weatherInfo, setWeatherInfo}}>
+  return (
+    <WeatherContext.Provider value={{ weatherInfo, setWeatherInfo }}>
       {children}
     </WeatherContext.Provider>
   )
 }
 
 WeatherInfoProvider.propTypes = {
-  children:P.node.isRequired
+  children: P.node.isRequired
 }
